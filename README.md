@@ -1,37 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EduBridge - College Booking Platform
+
+EduBridge is a comprehensive platform designed to connect students with their dream colleges. It allows users to explore various universities, manage their applications, and share their experiences through reviews.
+
+## Features
+
+-   **College Exploration**: Browse a wide range of colleges with detailed information on their programs, admission processes, research areas, and sports.
+-   **Application Management**: Easily apply to colleges and track the status of your applications.
+-   **Student Reviews**: Read and write reviews about colleges to help other students make informed decisions.
+-   **User Authentication**: Secure login and registration with email/password and social login options (Google, GitHub).
+-   **Responsive Design**: A user-friendly interface that adapts to various screen sizes.
+-   **Animated Hero Section**: A dynamic and engaging hero section on the landing page.
+
+## Technologies Used
+
+-   **Next.js**: React framework for building server-side rendered and static web applications.
+-   **React**: A JavaScript library for building user interfaces.
+-   **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+-   **shadcn/ui**: Reusable UI components built with Radix UI and Tailwind CSS.
+-   **MongoDB**: A NoSQL database for storing application data.
+-   **NextAuth.js**: Authentication library for Next.js applications.
+-   **Lucide React**: A collection of beautiful and customizable open-source icons.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally.
 
-```bash
+### Prerequisites
+
+-   Node.js (v18.x or higher)
+-   npm or yarn
+-   MongoDB Atlas account (or local MongoDB instance)
+-   Google and GitHub OAuth credentials (optional, for social login)
+
+### Installation
+
+1.  **Clone the repository:**
+    \`\`\`bash
+    git clone <your-repository-url>
+
+    \`\`\`
+
+2.  **Install dependencies:**
+    \`\`\`bash
+    npm install
+    # or
+    yarn install
+    \`\`\`
+
+3.  **Set up environment variables:**
+    Create a `.env.local` file in the root of your project and add the following environment variables:
+
+    \`\`\`env
+    NEXT_PUBLIC_MONGODB_URI=your_mongodb_connection_string
+    DB_NAME=your_database_name
+    NEXTAUTH_URL=http://localhost:3000
+    NEXT_PUBLIC_API_URL=http://localhost:3000
+    NEXTAUTH_SECRET=a_long_random_string_for_nextauth_secret
+    GOOGLE_CLIENT_ID=your_google_client_id
+    GOOGLE_CLIENT_SECRET=your_google_client_secret
+    GITHUB_ID=your_github_client_id
+    GITHUB_SECRET=your_github_client_secret
+    \`\`\`
+    -   Replace `your_mongodb_connection_string` with your MongoDB Atlas connection URI.
+    -   Replace `your_database_name` with the name of your database.
+    -   Generate a strong random string for `NEXTAUTH_SECRET`.
+    -   Obtain `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GITHUB_ID`, and `GITHUB_SECRET` from their respective developer consoles if you plan to use social login.
+
+4.  **Seed the database (optional but recommended):**
+    This project includes a script to seed initial college data into your MongoDB database.
+    \`\`\`bash
+    node scripts/seedColleges.js
+    \`\`\`
+
+### Running the Development Server
+
+\`\`\`bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   **Home Page (`/`)**: Explore the main landing page with a hero section, college search, research papers, and student reviews.
+-   **Colleges (`/colleges`)**: Browse all available colleges, apply filters, and view detailed information for each college.
+-   **Admission (`/admission`)**: Select a college and fill out the admission application form.
+-   **My College (`/my-college`)**: View your submitted applications and write reviews for colleges you've applied to.
+-   **Login (`/login`)**: Sign in to your account.
+-   **Register (`/register`)**: Create a new account.
+-   **Forgot Password (`/forgot-password`)**: Request a password reset link.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Edu-Bridge
+This project is open-source and available under the MIT License.

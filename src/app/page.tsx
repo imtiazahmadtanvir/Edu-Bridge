@@ -1,5 +1,3 @@
-
-import FloatingChatbot from "@/components/chatbot/floating-chatbot";
 import FeaturedColleges from "@/components/landing/featured-colleges";
 import Hero from "@/components/landing/hero";
 import ResearchPapers from "@/components/landing/research-papers";
@@ -15,7 +13,6 @@ export default function Home() {
         <ResearchPapers />
         <Reviews />
       </main>
-      <FloatingChatbot/>
    
     </div>
   );
